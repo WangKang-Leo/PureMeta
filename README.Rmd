@@ -1,5 +1,3 @@
-R# PureMeta
-
 ---
 output:
   html_document: 
