@@ -10,11 +10,11 @@ We have already defined cell states and ecotypes across **carcinomas** ([Luca/St
 
 If EcoTyper software, data, and/or website are used in your publication, please cite the following paper(s): 
 
-* Longitudinal proteogenomic profiling elucidates immunometabolism dynamics in breast cancer. [Kang Wang et al., Nature Communications 2023](https://doi.org/10.1016/j.ccell.2021.08.011) . (application of EcoTyper to lymphoma).
+* Longitudinal proteogenomic profiling elucidates immunometabolism dynamics in breast cancer. [Kang Wang et al., Nature Communications 2023](https://doi.org/10.1016/j.ccell.2021.08.011) . (application of PureMeta to the longitudinal breast cancer cohort).
 
 ## Setup
 
-The latest version of EcoTyper source code can be found on [EcoTyper GitHub repository](https://github.com/digitalcytometry/ecotyper) and [Ecotyper website](https://ecotyper.stanford.edu/). To set up EcoTyper, please download this folder locally:
+The latest version of EcoTyper source code can be found on [PureMeta GitHub repository](https://github.com/WangKang-Leo/PureMeta). To set up EcoTyper:
 
 ```{bash, eval = F}
 git clone https://github.com/digitalcytometry/ecotyper
