@@ -1,25 +1,4 @@
----
-output:
-  html_document: 
-    toc: true
-    toc_float: true
-  github_document:
-    math_method:
-      engine: webtex
-      url: http://chart.apis.google.com/chart?cht=tx&chl=
-  pdf_document: default
-  word_document: default
-  md_document: default
----
-
-```{r, setup, include=FALSE}
-knitr::opts_knit$set(root.dir = '.')
-knitr::opts_knit$set(fig.path = '.') 
-```
-
-<p align="center">
-  <img width="300" src="utils/EcoTyper_Logo.png">
-</p>
+## PureMeta
 
 ## Introduction
 
