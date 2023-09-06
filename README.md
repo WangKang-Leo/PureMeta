@@ -14,7 +14,7 @@ If EcoTyper software, data, and/or website are used in your publication, please 
 
 ## Setup
 
-The latest version of EcoTyper source code can be found on [PureMeta GitHub repository](https://github.com/WangKang-Leo/PureMeta). To set up EcoTyper:
+The latest version of PureMeta source code can be found on [PureMeta GitHub repository](https://github.com/WangKang-Leo/PureMeta). To set up EcoTyper:
 
 ```{bash, eval = F}
 git clone https://github.com/digitalcytometry/ecotyper
