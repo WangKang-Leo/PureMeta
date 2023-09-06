@@ -10,7 +10,7 @@ We have already defined cell states and ecotypes across **carcinomas** ([Luca/St
 
 If EcoTyper software, data, and/or website are used in your publication, please cite the following paper(s): 
 
-* [Steen/Luca et al., Cancer Cell 2021](https://doi.org/10.1016/j.ccell.2021.08.011) Longitudinal proteogenomic profiling elucidates immunometabolism dynamics in breast cancer. (application of EcoTyper to lymphoma).
+* Longitudinal proteogenomic profiling elucidates immunometabolism dynamics in breast cancer [Kang Wang et al., Nature Communications 2023](https://doi.org/10.1016/j.ccell.2021.08.011) . (application of EcoTyper to lymphoma).
 
 ## Setup
 
