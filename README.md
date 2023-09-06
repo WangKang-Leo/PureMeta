@@ -2,7 +2,7 @@
 
 ## Introduction
 
-[PureMeta](https://ecotyper.stanford.edu/) is an integrated bioinfomatic workflow to qunantify the metaboli states of tumor cells from bulk gene expression data.
+[PureMeta](https://ecotyper.stanford.edu/) is an integrated bioinfomatic workflow to qunantify the metabolic states of tumor cells from bulk gene expression data.
 
 We have already defined cell states and ecotypes across **carcinomas** ([Luca/Steen et al., Cell 2021](https://doi.org/10.1016/j.cell.2021.09.014)) and in **diffuse large B cell lymphoma (DLBCL)** ([Steen/Luca et al., Cancer Cell 2021](https://doi.org/10.1016/j.ccell.2021.08.011)). The current version of EcoTyper allows users to recover the cell states and ecotypes for these two tumor categories in their own data. Additionally, it allows users to discover and recover cell states and ecotypes in their system of interest, including **directly** from scRNA-seq data (see [Tutorial 5](#tutorial-5-de-novo-discovery-of-cell-states-and-ecotypes-in-scrna-seq-data)). Below we illustrate each of these functionalities. 
 
