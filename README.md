@@ -1,6 +1,4 @@
-## PureMeta
-
-# volcano3D <img src="logo.png" align="right" alt="" width="200" hspace="20" />
+# PureMeta <img src="logo.png" align="right" alt="" width="200" hspace="20" />
 
 ## Introduction
 
