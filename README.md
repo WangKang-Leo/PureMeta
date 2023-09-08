@@ -12,16 +12,24 @@ If EcoTyper software, data, and/or website are used in your publication, please 
 
 * Longitudinal proteogenomic profiling elucidates immunometabolism dynamics in breast cancer. [Kang Wang et al., Nature Communications 2023](https://doi.org/10.1016/j.ccell.2021.08.011) . (application of PureMeta to the longitudinal breast cancer cohort).
 
-## Setup
+## Installation
 
 The latest version of PureMeta source code can be found on [PureMeta GitHub repository](https://github.com/WangKang-Leo/PureMeta). To set up EcoTyper:
 
 ```{bash, eval = F}
 git clone https://github.com/digitalcytometry/ecotyper
-cd ecotyper
+library(PureMeta)
 ```
+## Reference files
 
-or:
+
+## Testing
+
+We provide some scripts and input data in the ExampleData folder.
+
+## Supported Analysis
+
+In the first step, the tumor cells’ mRNA abundance, as well as tumor purity, was concurrently estimated. Normal samples were regarded as reference, then Tumor- cells’ mRNA profiles were output.
 
 ```{bash, eval = F}
 wget https://github.com/digitalcytometry/ecotyper/archive/refs/heads/master.zip
