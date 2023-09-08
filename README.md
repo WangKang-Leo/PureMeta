@@ -1,5 +1,7 @@
 ## PureMeta
 
+# volcano3D <img src="logo.png" align="right" alt="" width="200" hspace="20" />
+
 ## Introduction
 
 [PureMeta](https://ecotyper.stanford.edu/) is an integrated bioinfomatic workflow to quantify the metabolic states of tumor cells from bulk gene expression data.
