@@ -58,3 +58,12 @@ You can also embed plots, for example:
 
 In that case, don’t forget to commit and push the resulting figure
 files, so they display on GitHub and CRAN.
+
+## Citation
+
+If PureMeta software is used in your publication, please cite the
+following paper(s):
+
+- Longitudinal molecular profiling elucidates immunometabolism dynamics
+  in breast cancer. [Kang Wang et al., Nature Communications 2023]() .
+  (application of PureMeta to the longitudinal breast cancer cohort).
