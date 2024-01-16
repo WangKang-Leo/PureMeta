@@ -2,11 +2,21 @@ Package: PureMeta
 Type: Package
 Title: PureMeta
 Version: 0.1.0
-Author: Kang Wang
-Maintainer: The package maintainer <kang.wang@ki.se>
-Description: Provide functionality to extract tumor cell-based gene 
-             expression profile and conduct GSEA analyses on metabolic genesets. 
+Author: Kang Wang <kang.wang@ki.se>
+Maintainer: Kang Wang <kang.wang@ki.se>
+Description: The goal of PureMeta is to provide functionality for extracting tumor cells-based gene expression profiles from bulk RNA-seq or microarray data, and generating tumor metabolic phenotype (i.e. downregulated, neutral, upregulated) for seven metabolic pathways. 
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.2.3
+URL: https://github.com/WangKang-Leo/PureMeta
+Suggests:
+ knitr,
+ rmarkdown
+VignetteBuilder: rmarkdown
+Imports:
+  ISOpureR,
+  clusterProfiler,
+  gson
+Depends: 
+    R (>= 2.10)
