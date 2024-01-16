@@ -1,18 +1,17 @@
-# Hello, world!
-#
-# This is an example function named 'hello'
-# which prints 'Hello, world!'.
-#
-# You can learn more about package authoring with RStudio at:
-#
-#   http://r-pkgs.had.co.nz/
-#
-# Some useful keyboard shortcuts for package authoring:
-#
-#   Install Package:           'Ctrl + Shift + B'
-#   Check Package:             'Ctrl + Shift + E'
-#   Test Package:              'Ctrl + Shift + T'
 
-hello <- function(x) {
-  x^2
+#' Extracting Tumor Cell-based GEP
+#'
+#' @param x,y  GEP of tumor and normal tissues
+#'
+#' @return The output from \code{\link{print}}
+#' @export
+#'
+#' @examples
+#' Extract_TC_GEP(x,y)
+#' \dontrun{
+#' Extract_TC_GEP(x,y)
+#' }
+#'
+Extract_TC_GEP <- function(x) {
+ print(x^3)
 }
