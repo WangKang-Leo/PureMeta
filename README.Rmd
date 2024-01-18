@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 
 ## Overview
 
-The goal of **PureMeta** is to provide functionality for extracting tumor cells-based gene expression profiles from bulk RNA-seq or microarray data, and generating tumor metabolic phenotype (i.e. downregulated, neutral, upregulated) for seven metabolic pathways.
+The goal of **PureMeta** is to provide functionality for extracting tumor cells-based gene expression profiles (GEP) from bulk RNA-seq or microarray data, and generating tumor cells-based metabolic phenotype (i.e. downregulated, neutral, upregulated) for seven metabolic pathways.
 
 
 ## Installation
@@ -37,9 +37,9 @@ devtools::install_github("WangKang-Leo/PureMeta")
 
 **This is a basic example which shows you how to run PureMeta:**
 
-**Step1**: Extracting tumor cell GEP from bulk RNA-seq/microarray data, where you also need tumor adjacent tissue GEP as control. The bulk tumor and normal GEP come from the sample experiments (no significant batch effect existed). Make sure GEP data is in normal (not log) space. This example used 30 tumor and 5 non-cancerous breast tissue (normal) GEP from [GSE87455](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE87455).
+**Step1**: Extracting tumor cell GEP from bulk RNA-seq/microarray data, where you also need tumor adjacent normal tissue GEP as control. The bulk tumor and normal GEP should be generated from the same experiments (no significant batch effect existed there). Make sure GEP data is in normal (not log) space. This example used 30 tumor and 5 non-cancerous breast tissue (normal) GEP from [GSE87455](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE87455).
 
-```{r Step1, echo = TRUE,warning=FALSE,message=FALSE}
+```{r Step1, echo = TRUE,warning=FALSE,message=FALSE,results='hide'}
 library(PureMeta)
 ## Only run 10 samples, this example would take ~10min
 TC_GEP=Extract_TC_GEP(tumor[,1:10],normal) 
@@ -48,14 +48,13 @@ TC_GEP=Extract_TC_GEP(tumor[,1:10],normal)
 
 **To show distribution of purity.**
 ```{r,echo = TRUE,warning=FALSE,message=FALSE,fig.align = "center"}
-library(ggpubr)
-ggdensity(TC_GEP$purity,fill = "lightyellow",add = "mean", rug = TRUE)
+hist(TC_GEP$purity,xlab = 'tumor purity', main = 'Distribution of purity derived from PureMeta')
 ```
 
 **Step2**: Generating metabolic phenotype using tumor cell GEP derived from step1, or using tumor bulk GEP.
 
 **For bulk GEP**
-```{r Step2 bulk GEP, echo = TRUE,warning=FALSE}
+```{r Step2 bulk GEP, echo = TRUE,warning=FALSE,results='hide'}
 # run MetaPhenotype for 10 samples, p cut-off value was set as 0.1
 Bulk_phenotype=MetaPhenotype(tumor[,1:10],0.1)
 ```
@@ -79,7 +78,7 @@ barplot(proportion_matrix, legend.text=T,
 ```
 
 **For Tumor cell GEP**
-```{r Step2 TC GEP,echo = TRUE,warning=FALSE}
+```{r Step2 TC GEP,echo = TRUE,warning=FALSE,results='hide'}
 TC_phenotype=MetaPhenotype(TC_GEP$tumor_cell_GEP,0.1)
 ```
 

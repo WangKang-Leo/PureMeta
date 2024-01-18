@@ -47,8 +47,7 @@ GEP.**
 **To show distribution of purity.**
 
 ``` r
-library(ggpubr)
-ggdensity(TC_GEP$purity,fill = "lightyellow",add = "mean", rug = TRUE)
+hist(TC_GEP$purity,xlab = 'tumor purity', main = 'Distribution of purity derived from PureMeta')
 ```
 
 <img src="image/exampple-unnamed-chunk-2-1.png" width="100%" style="display: block; margin: auto;" />
