@@ -8,8 +8,25 @@ normal_meta=data.frame(fread("E:/Projects/Proteogenomic_PROMIX/Manuscript/Revisi
 colnames(normal_meta)=c("sampleID","type")
 normal_meta$sampleID=gsub("-", ".", normal_meta$sampleID)
 tumor_brca=tumor[,tumor_meta$sampleID[tumor_meta$type=="BRCA"]]
-tumor_brca=log2(tumor_brca+1)
 normal_brca=normal[,normal_meta$sampleID[normal_meta$type=="BRCA"]]
-normal_brca=log2(normal_brca+1)
-saveRDS(tumor_brca[,1:30],file="E:/R_Dev/PureMeta/data/TCGA_BRCA_log2TPM.rds")
-saveRDS(normal_brca[,1:10],file="E:/R_Dev/PureMeta/data/TCGA_normal_breast_log2TPM.rds")
+saveRDS(tumor_brca[,1:10],file="E:/R_Dev/PureMeta/data_raw/TCGA_BRCA_log2TPM.rds")
+saveRDS(normal_brca[,1:5],file="E:/R_Dev/PureMeta/data_raw/TCGA_normal_breast_log2TPM.rds")
+
+library(readxl);library(clusterProfiler);library(data.table)
+gmt=read.gmt("E:/Projects/Proteogenomic_PROMIX/dataprocessing/step6/Metabolism_cluster/metabolite.gmt")
+uni_gene=unique(gmt$gene)
+exp=as.data.frame(fread("E:/Projects/Proteogenomic_PROMIX/dataprocessing/step6/Metabolism_cluster/promix_non_normal.csv"))
+row.names(exp)=exp[,1]
+exp=exp[,-1]
+cg=names(tail(sort(apply(exp,1,sd)),5000))  #########变化最大得2000gene
+genelist=Reduce(intersect,list(row.names(exp),uni_gene))
+genelist=Reduce(union,list(genelist,cg))
+exp=exp[genelist,]
+normal=exp[,c("147_op","315_op","224_op","611_OP","311_op")]
+tumor=exp[,!(colnames(exp)%in%colnames(normal))]
+
+library(usethis)
+tumor=tumor[,1:30]
+use_data(tumor,compress = "gzip",overwrite = TRUE)
+normal=normal
+use_data(normal,compress = "gzip",overwrite = TRUE)
