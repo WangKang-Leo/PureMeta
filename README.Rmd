@@ -47,7 +47,7 @@ TC_GEP=Extract_TC_GEP(tumor[,1:10],normal)
 The results included inferred tumor purity(0-1) as well as tumor cell GEP.
 
 show distribution of purity.
-```{r,fig.height = 4, fig.width =4, fig.align = "center"}
+```{r,fig.align = "center"}
 library(ggpubr)
 ggdensity(TC_GEP$purity,fill = "lightyellow",add = "mean", rug = TRUE)
 ```
