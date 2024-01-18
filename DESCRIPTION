@@ -21,4 +21,7 @@ Imports:
   dplyr,
   tidyverse
 Depends: 
-    R (>= 2.10)
+    R (>= 2.10),
+    ISOpureR,
+    clusterProfiler,
+    tidyverse
