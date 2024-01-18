@@ -35,32 +35,32 @@ devtools::install_github("WangKang-Leo/PureMeta")
 
 ## Example
 
-This is a basic example which shows you how to run PureMeta:
+**This is a basic example which shows you how to run PureMeta:**
 
-Step1: Extracting tumor cell GEP from bulk RNA-seq/microarray data, where you also need tumor adjacent tissue GEP as control. The bulk tumor and normal GEP come from the sample experiments (no significant batch effect existed). Make sure GEP data is in normal (not log) space. This example used 30 tumor and 5 non-cancerous breast tissue (normal) GEP from [GSE87455](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE87455).
+**Step1**: Extracting tumor cell GEP from bulk RNA-seq/microarray data, where you also need tumor adjacent tissue GEP as control. The bulk tumor and normal GEP come from the sample experiments (no significant batch effect existed). Make sure GEP data is in normal (not log) space. This example used 30 tumor and 5 non-cancerous breast tissue (normal) GEP from [GSE87455](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE87455).
 
-```{r Step1, echo = FALSE,warning=FALSE,message=FALSE}
+```{r Step1, echo = TRUE,warning=FALSE,message=FALSE}
 library(PureMeta)
 ## Only run 10 samples, this example would take ~10min
 TC_GEP=Extract_TC_GEP(tumor[,1:10],normal) 
 ```
-The results included inferred tumor purity(0-1) as well as tumor cell GEP.
+**The results included inferred tumor purity(0-1) as well as tumor cell GEP.**
 
-show distribution of purity.
-```{r,fig.align = "center"}
+**To show distribution of purity.**
+```{r,echo = TRUE,warning=FALSE,message=FALSE,fig.align = "center"}
 library(ggpubr)
 ggdensity(TC_GEP$purity,fill = "lightyellow",add = "mean", rug = TRUE)
 ```
 
-Step2: Generating metabolic phenotype using tumor cell GEP derived from step1, or using tumor bulk GEP.
+**Step2**: Generating metabolic phenotype using tumor cell GEP derived from step1, or using tumor bulk GEP.
 
-For bulk GEP 
-```{r Step2 bulk GEP, echo = FALSE,warning=FALSE,message=FALSE}
+**For bulk GEP**
+```{r Step2 bulk GEP, echo = TRUE,warning=FALSE}
 # run MetaPhenotype for 10 samples, p cut-off value was set as 0.1
 Bulk_phenotype=MetaPhenotype(tumor[,1:10],0.1)
 ```
-Calculate and show proportion of metabolic phenotype for seven pathway
-```{r,fig.height = 5, fig.width =10, fig.align = "center"}
+**Calculate and show proportion of metabolic phenotype for seven pathway**
+```{r,echo = TRUE,warning=FALSE,message=FALSE,fig.height = 5, fig.width =10, fig.align = "center"}
 library(ggpubr);library(tidyverse)
 phenotype=Bulk_phenotype$Metabolite_phenotype
 data=phenotype[,2:8]
@@ -78,13 +78,13 @@ barplot(proportion_matrix, legend.text=T,
         col =c("#99CCFF","#FF6666","#CCCCCC"))
 ```
 
-For Tumor cell GEP 
-```{r Step2 TC GEP,echo = FALSE,warning=FALSE,message=FALSE}
+**For Tumor cell GEP**
+```{r Step2 TC GEP,echo = TRUE,warning=FALSE}
 TC_phenotype=MetaPhenotype(TC_GEP$tumor_cell_GEP,0.1)
 ```
 
-Calculate and show proportion of metabolic phenotype for seven pathway
-```{r,fig.height = 4, fig.width =10, fig.align = "center"}
+**Calculate and show proportion of metabolic phenotype for seven pathway**
+```{r,echo = TRUE,warning=FALSE,message=FALSE,fig.height = 4, fig.width =10, fig.align = "center"}
 library(ggpubr);library(tidyverse)
 phenotype=TC_phenotype$Metabolite_phenotype
 data=phenotype[,2:8]
