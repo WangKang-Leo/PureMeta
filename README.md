@@ -200,5 +200,5 @@ If PureMeta software is used in your publication, please cite the
 following paper(s):
 
 - Longitudinal molecular profiling elucidates immunometabolism dynamics
-  in breast cancer. [Kang Wang et al.]() . (application of PureMeta to
+  in breast cancer. [Kang Wang et al.](https://www.nature.com/articles/s41467-024-47932-y) . (application of PureMeta to
   the longitudinal breast cancer cohort).
